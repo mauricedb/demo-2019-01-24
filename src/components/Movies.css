@@ -1,0 +1,32 @@
+.container {
+  display: flex;
+}
+
+.details {
+  flex: 1;
+}
+
+.detail {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+
+  border: 1px solid lightgrey;
+  border-radius: 6px;
+  padding: 6px;
+}
+
+.movies {
+  flex: 1;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.movie {
+  flex-basis: 300px;
+
+  border: 1px solid lightgrey;
+  border-radius: 6px;
+  padding: 6px;
+}
