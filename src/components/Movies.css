@@ -6,16 +6,6 @@
   flex: 1;
 }
 
-.detail {
-  position: -webkit-sticky;
-  position: sticky;
-  top: 0;
-
-  border: 1px solid lightgrey;
-  border-radius: 6px;
-  padding: 6px;
-}
-
 .movies {
   flex: 1;
   display: flex;
@@ -29,4 +19,25 @@
   border: 1px solid lightgrey;
   border-radius: 6px;
   padding: 6px;
+}
+
+.detail {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+
+  border: 1px solid lightgrey;
+  border-radius: 6px;
+  padding: 6px;
+}
+
+.detail-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.close-button {
+  padding: 1rem;
+  font-size: 1.5rem;
+  cursor: pointer;
 }
