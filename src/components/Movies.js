@@ -34,8 +34,8 @@ class Movies extends Component {
               </div>
             ))}
           </div>
-          <div className="details">
-            {selected && (
+          {selected && (
+            <div className="details">
               <div className="detail">
                 <h4>{selected.title}</h4>
                 <img src={selected.image} alt={selected.title} />
@@ -46,8 +46,8 @@ class Movies extends Component {
                   ))}
                 </ul>
               </div>
-            )}
-          </div>
+            </div>
+          )}
         </div>
       </>
     );
