@@ -1,5 +1,9 @@
-import React, { Component } from 'react';
+import React, { Component, lazy, Suspense } from 'react';
 import './Movies.css';
+
+// import Loading from './Loading';
+// import SelectedMovie from './SelectedMovie';
+// const SelectedMovie = lazy(() => import('./SelectedMovie'));
 
 class Movies extends Component {
   state = {
