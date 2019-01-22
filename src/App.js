@@ -1,6 +1,7 @@
-import React, { Component } from 'react';
+import React, { Component, StrictMode } from 'react';
 import './App.css';
 
+import Footer from './components/Footer';
 import Movies from './components/Movies';
 // import Fetch from './components/Fetch';
 
@@ -12,9 +13,7 @@ class App extends Component {
           <h2>Top Rated Movies</h2>
         </header>
         <Movies />
-        <footer>
-          <a href="https://www.themoviedb.org/">From The Movie DB</a>
-        </footer>
+        <Footer />
       </>
     );
   }
