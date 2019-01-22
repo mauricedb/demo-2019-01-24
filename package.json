@@ -1,5 +1,7 @@
 {
   "name": "better-components",
+  "author": "Maurice de Beijer",
+  "license": "MIT",
   "version": "0.1.0",
   "dependencies": {
     "prettier": "^1.15.3",

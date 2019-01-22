@@ -5,7 +5,17 @@ import Movies from './components/Movies';
 
 class App extends Component {
   render() {
-    return <Movies />;
+    return (
+      <>
+        <header>
+          <h2>Top Rated Movies</h2>
+        </header>
+        <Movies />
+        <footer>
+          <a href="https://www.themoviedb.org/">From The Movie DB</a>
+        </footer>
+      </>
+    );
   }
 }
 

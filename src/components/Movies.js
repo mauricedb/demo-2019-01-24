@@ -81,13 +81,10 @@ class Movies extends Component {
     const selectedMovie = this.getSelectedMovie();
 
     return (
-      <>
-        <h2>Movies</h2>
-        <div className="container">
-          {moviesList}
-          {selectedMovie}
-        </div>
-      </>
+      <div className="container">
+        {moviesList}
+        {selectedMovie}
+      </div>
     );
   }
 }
