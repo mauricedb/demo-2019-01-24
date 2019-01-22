@@ -2,12 +2,18 @@ import React, { Component } from 'react';
 import './Movies.css';
 
 class Movies extends Component {
-  state = { movies: [], selected: null };
+  state = {
+    movies: null,
+    loading: false,
+    error: null,
+    selected: null
+  };
 
   async componentDidMount() {
+    this.setState({ loading: true });
     const rsp = await fetch('/movies.json');
     const movies = await rsp.json();
-    this.setState({ movies });
+    this.setState({ movies, loading: false });
   }
 
   onMovieClicked = selected => this.setState({ selected });
@@ -30,9 +36,7 @@ class Movies extends Component {
     return result;
   }
 
-  getMovieList() {
-    const { movies } = this.state;
-
+  getMovieList(movies) {
     const result = (
       <div className="movies">
         {movies.map(movie => this.getMovieListCard(movie))}
@@ -77,7 +81,16 @@ class Movies extends Component {
   }
 
   render() {
-    const moviesList = this.getMovieList();
+    const { loading, movies } = this.state;
+    if (loading) {
+      return <div>Loading data...</div>;
+    }
+
+    if (!movies) {
+      return null;
+    }
+
+    const moviesList = this.getMovieList(movies);
     const selectedMovie = this.getSelectedMovie();
 
     return (

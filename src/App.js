@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 
 import Movies from './components/Movies';
+// import Fetch from './components/Fetch';
 
 class App extends Component {
   render() {
