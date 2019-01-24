@@ -1,5 +1,5 @@
 import React from 'react';
-// import withErrorBoundary from './withErrorBoundary';
+import withErrorBoundary from './withErrorBoundary';
 
 const SelectedMovie = ({ selected, onMovieCleared }) => (
   <div className="details">
@@ -21,4 +21,6 @@ const SelectedMovie = ({ selected, onMovieCleared }) => (
   </div>
 );
 
-export default SelectedMovie;
+SelectedMovie.displayName = 'SelectedMovie';
+
+export default withErrorBoundary(SelectedMovie);
