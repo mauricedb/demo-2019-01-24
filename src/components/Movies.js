@@ -1,7 +1,7 @@
 import React, { Component, lazy, Suspense } from 'react';
 import './Movies.css';
 
-// import Loading from './Loading';
+import Loading from './Loading';
 // import SelectedMovie from './SelectedMovie';
 // const SelectedMovie = lazy(() => import('./SelectedMovie'));
 
@@ -14,10 +14,14 @@ class Movies extends Component {
   };
 
   async componentDidMount() {
-    this.setState({ loading: true });
-    const rsp = await fetch('/movies.json');
-    const movies = await rsp.json();
-    this.setState({ movies, loading: false });
+    try {
+      this.setState({ loading: true });
+      const rsp = await fetch('/movies.json');
+      const movies = await rsp.json();
+      this.setState({ movies, loading: false });
+    } catch (error) {
+      this.setState({ error, loading: false });
+    }
   }
 
   onMovieClicked = selected => this.setState({ selected });
@@ -85,9 +89,15 @@ class Movies extends Component {
   }
 
   render() {
-    const { loading, movies } = this.state;
+    const { loading, movies, error } = this.state;
+    // const { selected } = this.state;
+
     if (loading) {
-      return <div>Loading data...</div>;
+      return <Loading />;
+    }
+
+    if (error) {
+      return <div className="error">{error.message}</div>;
     }
 
     if (!movies) {
@@ -101,6 +111,12 @@ class Movies extends Component {
       <div className="container">
         {moviesList}
         {selectedMovie}
+        {/* {selected && (
+          <SelectedMovie
+            selected={selected}
+            onMovieCleared={this.onMovieCleared}
+          />
+        )} */}
       </div>
     );
   }

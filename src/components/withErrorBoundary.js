@@ -11,14 +11,21 @@ export default function withErrorBoundary(WrappedComponent) {
     }
 
     componentDidCatch(error, info) {
-      console.warn('There was an error:', error, info);
+      console.warn(
+        `Error:\n\t${error}\nComponent stack:${info.componentStack}`
+      );
     }
 
     render() {
       const { error } = this.state;
 
       if (error) {
-        return <div>Error: {error.message}</div>;
+        return (
+          <div className="error">
+            <h2>Error: {error.message}</h2>
+            <p>{error.stack}</p>
+          </div>
+        );
       }
 
       return <WrappedComponent {...this.props} />;

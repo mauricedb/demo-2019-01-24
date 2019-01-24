@@ -13,6 +13,9 @@ class App extends Component {
           <h2>Top Rated Movies</h2>
         </header>
         <Movies />
+        {/* <Fetch url="/movies.json">
+          {({ data, ...props }) => <Movies movies={data} {...props} />}
+        </Fetch> */}
         <Footer />
       </>
     );

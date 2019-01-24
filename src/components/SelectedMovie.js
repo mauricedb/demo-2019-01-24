@@ -1,4 +1,5 @@
 import React from 'react';
+// import withErrorBoundary from './withErrorBoundary';
 
 const SelectedMovie = ({ selected, onMovieCleared }) => (
   <div className="details">

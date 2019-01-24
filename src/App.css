@@ -35,3 +35,13 @@ header {
   text-align: center;
   margin: 12px;
 }
+
+.error {
+  color: red;
+  border: 1px solid lightcoral;
+  border-radius: 6px;
+  padding: 6px;
+  margin: 6px;
+  max-height: 50vh;
+  overflow: hidden;
+}
