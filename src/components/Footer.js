@@ -1,15 +1,12 @@
-import React, { Component } from 'react';
+import React from 'react';
+import classes from './Footer.module.css';
 
-class Footer extends Component {
-  componentWillMount() {}
-  
-  render() {
-    return (
-      <footer>
-        <a href="https://www.themoviedb.org/">From The Movie DB</a>
-      </footer>
-    );
-  }
-}
+const Footer = () => {
+  return (
+    <footer className={classes.footer}>
+      <a href="https://www.themoviedb.org/">From The Movie DB</a>
+    </footer>
+  );
+};
 
 export default Footer;
